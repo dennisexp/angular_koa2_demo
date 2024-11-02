@@ -1,0 +1,35 @@
+{
+  "name": "demo_koa2",
+  "version": "0.1",
+  "author": "Achilles",
+  "private": true,
+  "description": "demo koa2 server",
+  "scripts": {
+    "start": "node app.js",
+    "test": "supervisor app.js",
+    "dev": "nodemon app.js",
+    "prod": "NODE_ENV=production node app.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^4.0.0",
+    "@koa/router": "^12.0.0",
+    "@types/joi": "^17.2.2",
+    "@types/koa": "^2.15.0",
+    "bcryptjs": "^2.4.3",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "koa": "^2.15.3",
+    "koa-bodyparser": "^4.4.1",
+    "koa-compress": "^5.1.1",
+    "koa-helmet": "^7.0.2",
+    "koa-json": "^2.0.2",
+    "koa-jwt": "^4.0.4",
+    "koa-log4": "^2.3.2",
+    "koa-ratelimit": "^5.1.0",
+    "koa-session": "^6.4.0",
+    "koa-static": "^5.0.0",
+    "mongoose": "^8.7.3"
+  }
+}

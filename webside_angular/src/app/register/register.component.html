@@ -1,0 +1,72 @@
+<!-- register.component.html -->
+<div class="register-container">
+    <div class="register-box">
+      <h1>注&nbsp;&nbsp;&nbsp;&nbsp;册</h1>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <input id="phone" type="text" placeholder="手机号" formControlName="phone">
+          <div class="field-error" *ngIf="registerForm.get('phone')?.touched">
+            <span *ngIf="registerForm.get('phone')?.errors?.['required']">
+              手机号是必填的
+            </span>
+            <span *ngIf="registerForm.get('phone')?.errors?.['pattern']">
+              请输入正确的手机号格式
+            </span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <input id="username" type="text" placeholder="用户名" formControlName="username">
+          <div class="field-error" *ngIf="registerForm.get('username')?.touched">
+            <span *ngIf="registerForm.get('username')?.errors?.['required']">
+              用户名是必填的
+            </span>
+            <span *ngIf="registerForm.get('username')?.errors?.['minlength']">
+              用户名至少2个字符
+            </span>
+            <span *ngIf="registerForm.get('username')?.errors?.['maxlength']">
+              用户名最多20个字符
+            </span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <input id="password" type="password" placeholder="密码" formControlName="password">
+          <div class="field-error" *ngIf="registerForm.get('password')?.touched">
+            <span *ngIf="registerForm.get('password')?.errors?.['required']">
+              密码是必填的
+            </span>
+            <span *ngIf="registerForm.get('password')?.errors?.['minlength']">
+              密码长度至少6位
+            </span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <input id="confirmPassword" type="password" placeholder="确认密码" formControlName="confirmPassword">
+          <div class="field-error" *ngIf="registerForm.get('confirmPassword')?.touched">
+            <span *ngIf="registerForm.get('confirmPassword')?.errors?.['required']">
+              请确认密码
+            </span>
+            <span *ngIf="registerForm.hasError('mismatch')">
+              两次输入的密码不一致
+            </span>
+          </div>
+        </div>
+        <!-- display error -->
+        <div class="error-message" *ngIf="errorMessage">
+          {{ errorMessage }}
+        </div>
+        <button 
+          type="submit" 
+          class="register-button" 
+          [disabled]="isLoading"
+        >
+          {{ isLoading ? '注册中...' : '注册' }}
+        </button>
+      </form>
+      <div class="login-link">
+        <a routerLink="/login">已有账号？去登录</a>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,8 @@
+.blank-layout {
+  /* min-width: 1280px;
+  max-width: 1620px; */
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,26 @@
+<div class="date-input-container" [formGroup]="dateForm">
+  <div class="input-group">
+    <input type="text" 
+            formControlName="year" 
+            maxlength="4" 
+            placeholder="请输入"
+            (input)="onInput('year', $event)">
+    <span class="unit">年</span>
+  </div>
+  <div class="input-group">
+    <input type="text" 
+            formControlName="month" 
+            maxlength="2" 
+            placeholder="请输入"
+            (input)="onInput('month', $event)">
+    <span class="unit">月</span>
+  </div>
+  <div class="input-group">
+    <input type="text" 
+            formControlName="day" 
+            maxlength="2" 
+            placeholder="请输入"
+            (input)="onInput('day', $event)">
+    <span class="unit">日</span>
+  </div>
+</div>

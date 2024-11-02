@@ -1,0 +1,67 @@
+<div class="date-picker-container">
+    <!-- 年份选择器 -->
+    <div class="picker-group" (clickOutside)="closeAllDropdowns()">
+    <div class="input-box year-box" 
+            (click)="toggleDropdown('year'); $event.stopPropagation()"
+            [class.active]="showYearDropdown"
+            [attr.data-content]="(selectedYear || '') + '&nbsp;年'">
+            <span class="arrow-down"></span>
+        </div>
+    @if (showYearDropdown) {
+        <div class="dropdown year-dropdown">
+        @for (year of yearList; track year) {
+            <div class="dropdown-item"
+                #dropdownItem
+                (click)="selectYear(year)"
+                [class.selected]="year === selectedYear">
+                {{year}}&nbsp;年
+            </div>
+        }
+        </div>
+    }
+    </div>
+
+    <!-- 月份选择器 -->
+    <div class="picker-group" (clickOutside)="closeAllDropdowns()">
+        <div class="input-box month-box" 
+            (click)="toggleDropdown('month'); $event.stopPropagation()"
+            [class.active]="showMonthDropdown"
+            [attr.data-content]="(selectedMonth || '') + '&nbsp;月'">
+            <span class="arrow-down"></span>
+        </div>
+    @if (showMonthDropdown) {
+        <div class="dropdown month-dropdown">
+        @for (month of monthList; track month) {
+            <div class="dropdown-item" 
+                #dropdownItem
+                (click)="selectMonth(month)"
+                [class.selected]="month === selectedMonth">
+                {{month}}&nbsp;月
+            </div>
+        }
+        </div>
+    }
+    </div>
+
+    <!-- 日期选择器 -->
+    <div class="picker-group" (clickOutside)="closeAllDropdowns()">
+        <div class="input-box day-box" 
+            (click)="toggleDropdown('day'); $event.stopPropagation()"
+            [class.active]="showDayDropdown"
+            [attr.data-content]="(selectedDay || '') + '&nbsp;日'">
+            <span class="arrow-down"></span>
+        </div>
+    @if (showDayDropdown) {
+        <div class="dropdown day-dropdown">
+        @for (day of dayList; track day) {
+            <div class="dropdown-item" 
+                #dropdownItem
+                (click)="selectDay(day)"
+                [class.selected]="day === selectedDay">
+                {{day}}&nbsp;日
+            </div>
+        }
+        </div>
+    }
+    </div>
+</div>

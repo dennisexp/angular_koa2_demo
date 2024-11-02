@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.font-brown{
+  color: #8B4513;
+}
+
+
+.custom-dialog-container {
+  /* // 设置对话框容器的位置 */
+  .mat-mdc-dialog-container {
+    position: relative;
+    padding: 0;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -120%);
+  }
+
+  .cdk-overlay-pane {
+    transform-origin: center !important;
+  }
+
+  .mat-mdc-button,
+  .mat-mdc-icon-button {
+    &:active {
+      transform: none !important;
+    }
+  }
+}

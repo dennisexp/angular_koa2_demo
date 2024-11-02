@@ -1,0 +1,22 @@
+  <ng-container>
+    <header class="app-header">
+      <div class="logo-section">
+        <img src="assets/logo.png" alt="票据logo" class="logo">
+        <span class="title">全国统一规范电子票</span>
+      </div>
+      <nav>
+        <a routerLink="/dashboard">首页</a>
+        <a routerLink="/invoice-issue">我要开票</a>
+        <a routerLink="/query">我要查询</a>
+      </nav>
+      <div class="user-section">
+        <img src="assets/avatar.png" alt="用户头像" class="avatar">
+        <span>18812345678</span>
+        <button (click)="logout()" class="logout-btn">退出</button>
+      </div>
+    </header>
+  </ng-container>
+  <div class="content"><router-outlet></router-outlet></div>
+ 
+
+

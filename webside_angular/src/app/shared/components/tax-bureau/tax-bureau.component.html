@@ -1,0 +1,20 @@
+<!-- <div class="tax-bureau"> -->
+    <!-- <span class="label">销售方税务局:</span> -->
+    <div class="custom-select">
+      <div class="select-box" (click)="toggleDropdown()">
+        {{selectedTaxBureau ? getTaxBureauLabel(selectedTaxBureau) : '请选择'}}
+        <span class="arrow-down"></span>
+      </div>
+      @if (isDropdownOpen) {
+        <div class="dropdown">
+          @for (bureau of taxBureaus; track bureau.code) {
+            <div class="dropdown-item" 
+                 (click)="selectOption(bureau.code)"
+                 [class.selected]="bureau.code === selectedTaxBureau">
+              {{bureau.label}}
+            </div>
+          }
+        </div>
+      }
+    </div>
+  <!-- </div> -->
